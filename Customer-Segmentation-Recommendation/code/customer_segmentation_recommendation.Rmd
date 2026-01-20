@@ -1,0 +1,118 @@
+---
+title: "Customer Segmentation & Recommendation Analysis"
+author: "Abhinaya Gundagal Nagabhushan"
+output: html_document
+---
+# Libraries
+
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+library(cluster)
+library(arules)
+library(arulesViz)
+library(scatterplot3d)
+
+set.seed(314)
+
+#Business Objective
+
+Acme Innovations has experienced declining customer retention due to changing customer preferences.
+This project applies customer segmentation and association rule mining to identify high-value customer groups and frequently purchased product combinations to support data-driven marketing decisions.
+
+#Data Description
+
+Customer Data: demographics and behavioral attributes (age, salary, spending score, time as customer)
+
+Purchase History Data: transactional purchase records for recommendation analysis
+
+#Load Data
+customer_data <- read.csv("../data/customer_data.csv")
+customer_purchase_history <- read.csv("../data/customer_purchase_history_final.csv")
+
+#Data Exploration
+summary(customer_data)
+summary(customer_purchase_history)
+str(customer_data)
+str(customer_purchase_history)
+
+sapply(customer_data, function(x) sum(is.na(x)))
+sapply(customer_purchase_history, function(x) sum(is.na(x)))
+
+#Data Preparation
+# Select numeric features for clustering
+
+customer_features <- customer_data[2:5]
+
+customer_features <- customer_features %>%
+mutate(across(where(is.numeric), ~ replace_na(., mean(., na.rm = TRUE))))
+
+#Exploratory Analysis
+hist(customer_features[,1], main="Age Distribution", xlab="Age")
+hist(customer_features[,2], main="Salary Distribution", xlab="Salary")
+hist(customer_features[,3], main="Spending Score Distribution", xlab="Spending Score")
+hist(customer_features[,4], main="Time as Customer", xlab="Time as Customer")
+
+#Customer Segmentation — K-Means
+#Elbow Method
+wcss <- c()
+for (i in 1:15) {
+wcss[i] <- sum(kmeans(customer_features, i)$withinss)
+}
+
+plot(1:15, wcss, type="b",
+main="Elbow Method",
+xlab="Number of Clusters",
+ylab="WCSS")
+
+#Model Fit
+set.seed(214)
+k_model <- kmeans(customer_features, centers = 4, nstart = 10)
+customer_features$cluster <- factor(k_model$cluster)
+k_model
+
+#Cluster Visualization
+plot(customer_features$salary,
+customer_features$spendingScore,
+col = customer_features$cluster,
+pch = 16,
+xlab = "Salary",
+ylab = "Spending Score",
+main = "Customer Segments")
+
+legend("topright",
+legend = levels(customer_features$cluster),
+col = seq_along(levels(customer_features$cluster)),
+pch = 16)
+
+scatterplot3d(customer_features$salary,
+customer_features$spendingScore,
+customer_features$time_as_customer,
+color = as.numeric(customer_features$cluster),
+pch = 16,
+main = "3D Customer Segmentation")
+
+#Recommendation Analysis — Association Rules
+transactions <- read.transactions(
+"../data/customer_purchase_history_final.csv",
+sep = ",",
+rm.duplicates = TRUE
+)
+
+itemFrequencyPlot(transactions, topN = 10,
+main = "Top 10 Purchased Products")
+rules <- eclat(transactions, parameter = list(support = 0.003, minlen = 2))
+inspect(sort(rules, by = "support")[1:20])
+
+#Key Insights & Business Recommendations
+
+Identified distinct customer segments with varying spending behavior
+
+High-income customer segments show strong loyalty potential
+
+Frequently purchased product combinations can be used for bundling and cross-selling
+
+Targeted marketing strategies can improve customer retention and average order value
+
+
+
