@@ -1,5 +1,4 @@
-Code:
-Customer Segmentation & Recommendation Analysis (R)
+Title:Customer-Segmentation-Recommendation
 
 Goal:
 To analyze customer behavior and purchasing patterns in order to identify meaningful customer segments and uncover product recommendation opportunities that support targeted marketing and improved customer retention.
