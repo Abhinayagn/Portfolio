@@ -1,26 +1,18 @@
+# Job-Market-Web-Scraping
 
-# Job Market Web Scraping
+## Goal  
+To collect and analyze real-time job postings from company career pages in order to understand current hiring trends, role demand, and location patterns for Data Analyst and Business Analyst positions, supporting data-driven career and market insights.
 
-## Overview
-This project focuses on collecting real job postings from company career pages using web scraping techniques. 
-The goal is to analyze current hiring trends for Data Analyst and Business Analyst roles by extracting structured job data directly from job application platforms.
+## Description  
+This project focused on scraping real-world job postings directly from company career pages powered by Greenhouse application systems. The objective was to avoid outdated or duplicate listings commonly found on job boards and instead extract structured job data directly from employer sources.
 
-## What this project does
-- Scrapes real job postings from Greenhouse-powered career pages
-- Extracts job title, company, location, and posting details
-- Stores cleaned job data into CSV files for analysis
+The dataset includes job attributes such as job title, company name, location, and posting details. The project involved identifying Greenhouse-based job pages, extracting embedded JSON data, handling dynamic content using browser automation, cleaning and structuring the data, and storing the results in CSV format. Analyst-specific roles were further filtered to enable focused job market analysis.
 
-## Tools Used
-- Python
-- Playwright
-- JSON parsing
-- Pandas
-- CSV
+## Skills  
+web scraping, data extraction, JSON parsing, data cleaning, data structuring, automation, exploratory data analysis, business insight generation.
 
-## Output Files
-- Greenhouse job listings
-- Filtered real job postings
-- Analyst-specific job roles
+## Technology  
+Python, Playwright, Requests, JSON parsing, Pandas, CSV.
 
-## Use Case
-This project helps job seekers understand real hiring demand and avoids fake or expired job listings by pulling data directly from employer systems.
+## Results  
+The analysis successfully identified real and active job postings directly from employer career systems, reducing noise from expired or duplicate listings. Clear patterns in analyst role availability and geographic distribution were observed, enabling better understanding of current hiring demand. The extracted insights can be used for targeted job searches, workforce planning, and market trend analysis.
