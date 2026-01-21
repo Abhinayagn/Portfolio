@@ -15,8 +15,10 @@ Through hands-on projects using **R, SQL, Python, Power BI, and Excel**, I apply
 
 In this section, I list data analytics projects that demonstrate my ability to collect, analyze, and interpret data using different tools and technologies.
 
-### R
-- [Customer Segmentation & Recommendation Analysis](https://github.com/Abhinayagn/Portfolio/tree/main/Customer-Segmentation-Recommendation)
+R
+- [Customer Segmentation & Recommendation Analysis](./Customer-Segmentation-Recommendation)
 
+Python
+- [Job Market Web Scraping](./Job-Market-Web-Scraping)
 
 
