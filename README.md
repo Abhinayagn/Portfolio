@@ -49,14 +49,11 @@ GPA: 8.2 / 10
 
 ---
 ## Certifications
-
-- [Google Data Analytics Professional Certificate — Coursera](https://www.coursera.org/professional-certificates/google-data-analytics)
+- [Google Data Analytics Professional Certificate — Coursera](https://coursera.org/share/021ea479a718e62ec92b424fb47169bf)
 - [Introduction to Statistics — Stanford University (Coursera)](https://coursera.org/share/d45d6bf461035b1a8700fb088fb80426)
 - [Supervised Machine Learning: Regression and Classification — Coursera](https://coursera.org/share/da02bcec7b46fde2ad1461737687ee79)
 - [Business Metrics for Data-Driven Companies — Coursera](https://coursera.org/share/e0814caa2c2520cb1fdf89528dfe712c)
 - [AWS Certified AI Practitioner](https://aws.amazon.com/certification/certified-ai-practitioner/)
-
----
 
 ## Contact
 
