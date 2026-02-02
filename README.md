@@ -26,16 +26,14 @@ This repository showcases my analytical approach, project work, and ability to c
 ---
 
 ## Portfolio Projects
+- **R**
+  - [Customer Segmentation & Recommendation Analysis](./Customer-Segmentation-Recommendation)
 
-### R
-- [Customer Segmentation & Recommendation Analysis](./Customer-Segmentation-Recommendation)
+- **Python**
+  - [Job Market Web Scraping](./Job-Market-Web-Scraping)
 
-### Python
-- [Job Market Web Scraping](./Job-Market-Web-Scraping)
-
-### Power-Bi
-- [Power-bi Sales Analytics Dashboard](./Power-bi Sales Analytics Dashboard)
-
+- **Power BI**
+  - [Power-bi Sales Analytics Dashboard](./Power-bi%20Sales%20Analytics%20Dashboard)
 
 ---
 
