@@ -33,8 +33,9 @@ This repository showcases my analytical approach, project work, and ability to c
 ### Python
 - [Job Market Web Scraping](./Job-Market-Web-Scraping)
 
-###Power-Bi
-- [Power-Bi ](./Job-Market-Web-Scraping)
+### Power-Bi
+- [Power-bi Sales Analytics Dashboard](./Power-bi Sales Analytics Dashboard)
+
 
 ---
 
